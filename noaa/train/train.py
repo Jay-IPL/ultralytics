@@ -5,9 +5,9 @@ from ultralytics import YOLO
 model = YOLO('yolov8x.pt')  # load a pretrained model (recommended for training)
 
 # Train the model with 2 GPUs
-results = model.train(data='noaa_10000.yaml',
-                      epochs=100,
+results = model.train(data='/work/u1436961/JieMei/ultralytics/ultralytics/cfg/datasets/noaa_full.yaml',
+                      epochs=50,
                       imgsz=640,
-                      batch=16,
-                      device=[0, 1],
-                      name='noaa_10000(yolov8x)')
+                      batch=32*8,
+                      device=[0,1,2,3,4,5,6,7],
+                      name='noaa_full(yolov8x)')
