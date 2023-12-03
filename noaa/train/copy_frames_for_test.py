@@ -10,22 +10,20 @@ if not os.path.exists(dest_dir):
     os.makedirs(dest_dir)
 
 # Define a function to determine whether to copy a file
-def should_copy(filename):
+def should_copy(filename, start_id, end_id):
     # Implement your logic here
     if filename.endswith('.jpg'):
         id = int(filename.split('_')[0])
-        # from IPython import embed
-        # embed()
     else:
         return False
     # For example, copy only PNG files:
-    return id>60050 and id<61000
+    return id>start_id and id<end_id
 
 # Iterate over files in the source directory
 for filename in os.listdir(source_dir):
     file_path = os.path.join(source_dir, filename)
     # Check if the file meets your criteria
-    if should_copy(filename):
+    if should_copy(filename, start_id=60050, end_id=61000):
         # Copy the file to the destination directory
         shutil.copy(file_path, dest_dir)
 
