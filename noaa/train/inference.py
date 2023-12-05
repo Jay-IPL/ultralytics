@@ -35,7 +35,7 @@ if __name__ == '__main__':
     results = model.track(source=args.inference_folder,
                           stream=True,  # use stream=True to avoid out of memory.
                           tracker='botsort.yaml', # it has camera motion compensation. or try "bytetrack.yaml"
-                          show=True,
+                          show=False,
                           conf=args.confidence_threshold, # 0.167 is searched during detector training.
                           iou=0.7, # default
                           imgsz=640, # default, also is my trained model input size.
