@@ -39,7 +39,8 @@ if __name__ == '__main__':
                           conf=args.confidence_threshold, # 0.167 is searched during detector training.
                           iou=0.7, # default
                           imgsz=640, # default, also is my trained model input size.
-                          verbose=False, # disable showing frames
+                          verbose=True, # disable showing frames
+                          persist=True, 
                         #   epochs=50,
                         #   imgsz=640,
                         #   batch=32*8,
