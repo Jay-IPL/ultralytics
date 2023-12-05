@@ -169,3 +169,5 @@ pnnx*
 
 noaa/test_data
 noaa/test_result
+noaa/test_video
+noaa/test_result_video

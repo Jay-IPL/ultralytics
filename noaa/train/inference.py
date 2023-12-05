@@ -1,4 +1,5 @@
 # command: python noaa/train/inference.py --save_tracking_video --inference_folder '/home/jiemei/Documents/ultralytics/noaa/test_data' --confidence_threshold 0.167 --save_folder 'noaa/test_result'
+# command: python noaa/train/inference.py --save_tracking_video --inference_folder '/home/jiemei/Documents/ultralytics/noaa/test_video/output.avi' --confidence_threshold 0.167 --save_folder 'noaa/test_result_video'
 
 from ultralytics import YOLO
 import argparse
