@@ -27,6 +27,9 @@ def creat_csv(result_save_dir):
 
 if __name__ == '__main__':
     args = parse_option()
+
+    if not os.path.exists(args.save_folder):
+        os.makedirs(args.save_folder)
     
     # Step-1: Load yolov8 trained on NOAA-full dateset.
     model = YOLO('runs/detect/noaa_full(yolov8x)/weights/best.pt')
