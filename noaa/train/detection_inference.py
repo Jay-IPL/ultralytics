@@ -77,10 +77,13 @@ if __name__ == '__main__':
             continue
 
         # Step-3.2: save all frames including detections/blank frames into csv file, here 5 classes are detected.
+        img_height = r.orig_shape[0]
+        img_width = r.orig_shape[1]
         for each_box, each_conf, each_cls in zip(r.boxes.xyxyn, r.boxes.conf, r.boxes.cls):
             # save 5 classes detections into csv file.
             xmin, ymin, xmax, ymax = each_box
-            csv_writer.writerow([os.path.basename(r.path),xmin.item(),ymin.item(), xmax.item(), ymax.item(), each_conf.item(), r.names[int(each_cls.item())]])
+            # since later tracking requires absolute box location!
+            csv_writer.writerow([os.path.basename(r.path),xmin.item() * img_width, ymin.item()*img_height, xmax.item() * img_width, ymax.item()*img_height, each_conf.item(), r.names[int(each_cls.item())]])
 
     # close file writer.
     f.close()
