@@ -19,7 +19,7 @@ def parse_option():
     return args
 
 def creat_csv(result_save_dir):
-    f = open(result_save_dir+'/detection_result_with_blank_frames_batch.csv', 'w')
+    f = open(result_save_dir+'/detection_result_with_blank_frames_batch.csv', 'w',  newline='')
     csv_writer = csv.writer(f)
     csv_writer.writerow(["frame_id", "xmin", "ymin", "xmax", "ymax", "confidence","class"])
 
